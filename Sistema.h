@@ -12,4 +12,4 @@ public:
     void iniciar();
 };
 
-#endif#pragma once
+#endif

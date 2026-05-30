@@ -1,26 +1,30 @@
 #ifndef USUARIO_H
 #define USUARIO_H
 
-#include <string>
-using namespace std;
+#include "Persona.h"
 
-class Usuario {
+class Usuario : public Persona {
 private:
-	int idUsuario;
-	string usuario;
-	string contrasena;
+    string usuario;
+    string contrasena;
 
 public:
-	Usuario();
-	Usuario(int id, string user, string pass);
+    Usuario();
 
-	int getIdUsuario();
-	string getUsuario();
-	string getContrasena();
+    Usuario(
+        int id,
+        string nombre,
+        string usuario,
+        string contrasena
+    );
 
-	void setUsuario(string user);
-	void setContrasena(string pass);
+    string getUsuario();
+    string getContrasena();
+
+    void setUsuario(string usuario);
+    void setContrasena(string contrasena);
+
+    void mostrarDatos() override;
 };
 
 #endif
-#pragma once

@@ -78,3 +78,7 @@ void Facturacion::generarComprobante() {
     PQclear(detalleRes);
     PQclear(ventaRes);
 }
+
+void Facturacion::mostrar() {
+    generarComprobante();
+}

@@ -46,3 +46,7 @@ void HistorialVentas::mostrarHistorial() {
 
     PQclear(res);
 }
+
+void HistorialVentas::mostrar() {
+    mostrarHistorial();
+}

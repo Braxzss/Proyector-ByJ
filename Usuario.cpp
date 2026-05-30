@@ -1,20 +1,45 @@
 #include "Usuario.h"
+#include <iostream>
 
-Usuario::Usuario() {
-	idUsuario = 0;
-	usuario = "";
-	contrasena = "";
+using namespace std;
+
+Usuario::Usuario()
+    : Persona()
+{
+    usuario = "";
+    contrasena = "";
 }
 
-Usuario::Usuario(int id, string user, string pass) {
-	idUsuario = id;
-	usuario = user;
-	contrasena = pass;
+Usuario::Usuario(
+    int id,
+    string nombre,
+    string usuario,
+    string contrasena
+)
+    : Persona(id, nombre)
+{
+    this->usuario = usuario;
+    this->contrasena = contrasena;
 }
 
-int Usuario::getIdUsuario() { return idUsuario; }
-string Usuario::getUsuario() { return usuario; }
-string Usuario::getContrasena() { return contrasena; }
+string Usuario::getUsuario() {
+    return usuario;
+}
 
-void Usuario::setUsuario(string user) { usuario = user; }
-void Usuario::setContrasena(string pass) { contrasena = pass; }
+string Usuario::getContrasena() {
+    return contrasena;
+}
+
+void Usuario::setUsuario(string usuario) {
+    this->usuario = usuario;
+}
+
+void Usuario::setContrasena(string contrasena) {
+    this->contrasena = contrasena;
+}
+
+void Usuario::mostrarDatos() {
+    cout << "\n===== USUARIO =====";
+    Persona::mostrarDatos();
+    cout << "Usuario: " << usuario << endl;
+}
